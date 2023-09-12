@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/root_theme.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/userpanelres.css">
+    <script src="https://kit.fontawesome.com/9e31c82e4e.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function() {
+            var usermenu = document.querySelector(".menuContainer")
+            var closeandopen = document.querySelector(".openandclosebtn")
+            var menudetils = document.querySelector('.menudetils')
+            var shortcuts = document.querySelector('.shortcuts')
+
+            $(closeandopen).click(function(){
+                if (closeandopen.innerHTML === '<i class="fa-solid fa-bars" style="color: #ffffff;"></i>') {
+                    closeandopen.innerHTML = ''
+                    closeandopen.innerHTML = '<i class="fa-solid fa-xmark" style="color: #ffffff;"></i>'
+
+                }else {
+                    closeandopen.innerHTML = '<i class="fa-solid fa-bars" style="color: #ffffff;"></i>'
+                }
+                $(usermenu).toggleClass("menutoggle")
+                $(menudetils).toggleClass("menuContainerOpacity")
+                $(shortcuts).toggleClass("shortcutsopacity")
+            })
+        })
+    </script>
+    <title>صفحه کاربری</title>
+</head>
+<body>
+    <div class="menuContainer">
+        <div class="openandclosebtn"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+        <div class="shortcuts">
+            <a href="" title="خانه">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="" title="کارها">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <a href="" title="تنظیمات">
+                <i class="fa-solid fa-gear"></i>
+            </a>
+        </div>
+        <div class="menudetils">
+            <div class="userProfile">
+                <img src="images/blankuser.webp" alt="">
+                <h5><span>user</span>خوش آمدید </h5>
+            </div>
+            <div class="menu">
+                <a href="">
+                    <h5>صفحه اصلی</h5>
+                </a>
+                <a href="./search.html">
+                    <h5>جستجو</h5>
+                </a>
+                <a href="">
+                    <h5>مشارکت در تبلیغات</h5>
+                </a>
+                <a href="">
+                    <h5>ثبت تبلیغات</h5>
+                </a>
+                <a href="">
+                    <h5>گزاش تبلیغات</h5>
+                </a>
+                <a href="">
+                    <h5>ارسال تیکت</h5>
+                </a>
+                <a href="">
+                    <h5>چت آنلاین</h5>
+                </a>
+                <a href="">
+                    <h5>خیریه</h5>
+                </a>
+                <a href="">
+                    <h5>تنظیمات</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="objcontainer">
+        <div class="objectsbar">
+            <div class="notifandlogo">
+                <img src="images/c2_logo_purple.png" alt="">
+                <div class="notif">
+                    <i class="fa-solid fa-bell" style="color: #ffffff;"></i>
+                    <div class="notifcounter">1</div>
+                </div>
+            </div>
+        </div>
+        <div class="objects">
+            <div class="banners">
+                <div class="banner wallet">
+                    <div class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div class="info">
+                        <h3>: موجوی کیف پول شما</h3>
+                        <span>
+                            <h2>3000</h2>
+                            <h5>تومان</h5>
+                        </span>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="icon">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="info">
+                        <h3>: اهدایی شما به خیریه</h3>
+                        <span>
+                            <h2>3000</h2>
+                            <h5>تومان</h5>
+                        </span>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="icon">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                    <div class="info">
+                        <h3>: کل درامد شما</h3>
+                        <span>
+                            <h2>3000</h2>
+                            <h5>تومان</h5>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="jobinfo">
+                <div class="jobinfochild finishedjobs">
+                    <div class="icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div class="donelistview">
+                        <h2>پروژه های انجام شده</h2>
+                        <a href="">مشاهده</a>
+                    </div>
+                </div>
+                <div class="jobinfochild openjobs">
+                    <canvas id="meuGrafico"></canvas>
+                </div>
+                <div class="jobinfochild openjobs">
+                    <div class="icon">
+                        <i class="fa-solid fa-hand"></i>
+                    </div>
+                    <div class="donelistview">
+                        <h2>پروژه های در دست انجام</h2>
+                        <a href="">مشاهده</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mainshortcuts">
+                <div class="mainshort">
+                    <div class="icon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+                    <div class="shortlink">
+                        <h1>درخواست پشتیبانی</h1>
+                        <a href="">
+                            پشتیبانی
+                        </a>
+                    </div>
+                </div>
+                <div class="mainshort">
+                    <div class="icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <div class="shortlink">
+                        <h1>تغییر اطلاعات کاربری</h1>
+                        <a href="">
+                            تنظیمات
+                        </a>
+                    </div>
+                </div>
+                <div class="mainshort">
+                    <div class="icon">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="shortlink">
+                        <h1>کمک به خیریه</h1>
+                        <a href="">
+                            پرداخت
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/chart.js"></script>
+
+</body>
+</html>

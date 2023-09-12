@@ -1,0 +1,139 @@
+:root {
+  --bgcolorMenu: #493264;
+  --bgcolorBody: #eee;
+}
+
+body {
+  direction: rtl;
+  background-color: #eee;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.search {
+}
+
+.search__box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search__input {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--bgcolorMenu);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.search__input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  direction: rtl;
+  padding: 0 15px;
+  background-color: transparent;
+}
+
+.search__input i {
+  font-size: 20px;
+  color: var(--bgcolorMenu);
+  padding: 0 5px;
+}
+
+.search__products {
+  margin-top: 30px;
+}
+
+.search__products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.search__product-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+  height: 180px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 4px 4px 15px gray;
+  cursor: pointer;
+}
+
+.cart__user-informations {
+  flex: 2;
+}
+
+.cart__user-img {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-top: 18px;
+}
+
+.cart__user-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.cart__user-informations {
+}
+
+.cart__user-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart__user-rate span {
+  color: gold;
+  font-size: 25px;
+}
+
+.cart__user-desc p {
+  font-size: 12px;
+}
+
+.cart__user-moreInfo a {
+  font-size: 14px;
+}
+
+.cart__user-moreInfo a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+  .search__product-cart {
+    width: 38vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search__product-cart {
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .search__product-cart {
+    width: 64vw;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .search__product-cart {
+    width: 80vw;
+  }
+}
