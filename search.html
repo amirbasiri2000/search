@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/search.css" />
     <title>Search</title>
@@ -14,9 +15,153 @@
           <input type="text" placeholder="جستوجو" />
           <i class="fa fa-search"></i>
         </div>
+
+        <i
+          id="search__options-icon"
+          class="fa fa-filter"
+          aria-hidden="true"
+        ></i>
+        <div class="search__options">
+          <form>
+            <div class="search__options-container">
+              <div class="filter__map"></div>
+              <div class="filter__rating">
+                <!--  -->
+                <div class="price__rating d-flex">
+                  <div class="wrapper">
+                    <header>
+                      <h4>محدوده قیمت</h4>
+                    </header>
+                    <div class="price-input">
+                      <div class="field">
+                        <span>کمترین</span>
+                        <input type="number" class="input-min" value="2500" />
+                      </div>
+                      <div class="separator">-</div>
+                      <div class="field">
+                        <span>بیشترین</span>
+                        <input type="number" class="input-max" value="7500" />
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="progress"></div>
+                    </div>
+                    <div class="range-input">
+                      <input
+                        type="range"
+                        class="range-min"
+                        min="0"
+                        max="10000"
+                        value="2500"
+                        step="100"
+                      />
+                      <input
+                        type="range"
+                        class="range-max"
+                        min="0"
+                        max="10000"
+                        value="7500"
+                        step="100"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="stars__rating">
+                  <label>
+                    <input type="radio" name="stars" value="1" />
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="2" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="3" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="4" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="stars" value="5" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                </div>
+              </div>
+              <div class="user__state">
+                <legend>استان و شهر مورد نظر خود را انتخاب کنید :‌</legend>
+
+                <div class="user__state-location">
+                  <div>
+                    <label for="country">انتخاب استان</label>
+                    <select name="province" id="province">
+                      <option disabled selected="selected">انتخاب</option>
+                      <option value="EastAzerbaijan">آذربایجان شرقی</option>
+                      <option value="ٌWestAzerbaijan">آذربایجان غربی</option>
+                    </select>
+                  </div>
+
+                  <div class="EastAzerbaijan">
+                    <label for="city">شهر</label>
+                    <select name="city" id="city">
+                      <option value="" selected="selected" disabled>
+                        انتخاب
+                      </option>
+                      <option value="ُTabriz">تبریز</option>
+                      <option value="Khosrowshar">خسروشهر</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__bottons">
+              <button id="search" type="submit">جستوجو</button>
+              <button id="cancel" type="button">لغو</button>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="search__products">
         <div class="search__products-container">
+          <!-- <div class="search__product-cart">
+            <div class="cart__user-informations">
+              <div class="cart__user-name">
+                <h4>امیر بصیری</h4>
+                <div class="cart__user-rate">
+                  <span> &#9733;</span>
+                  <span> &#9733;</span>
+                  <span> &#9733;</span>
+                  <span> &#9733;</span>
+                </div>
+              </div>
+              <div class="cart__user-desc">
+                <p>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گر
+                </p>
+              </div>
+              <div class="cart__user-moreInfo">
+                <a href="/">مشاهده بیشتر</a>
+              </div>
+            </div>
+            <div class="cart__user-img">
+              <img src="./images/user_img.png" alt="user" />
+            </div>
+          </div>
+          
           <div class="search__product-cart">
             <div class="cart__user-informations">
               <div class="cart__user-name">
@@ -42,7 +187,7 @@
               <img src="./images/user_img.png" alt="user" />
             </div>
           </div>
-          <!--  -->
+         
           <div class="search__product-cart">
             <div class="cart__user-informations">
               <div class="cart__user-name">
@@ -67,33 +212,7 @@
             <div class="cart__user-img">
               <img src="./images/user_img.png" alt="user" />
             </div>
-          </div>
-          <!--  -->
-          <div class="search__product-cart">
-            <div class="cart__user-informations">
-              <div class="cart__user-name">
-                <h4>امیر بصیری</h4>
-                <div class="cart__user-rate">
-                  <span> &#9733;</span>
-                  <span> &#9733;</span>
-                  <span> &#9733;</span>
-                  <span> &#9733;</span>
-                </div>
-              </div>
-              <div class="cart__user-desc">
-                <p>
-                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                  استفاده از طراحان گر
-                </p>
-              </div>
-              <div class="cart__user-moreInfo">
-                <a href="/">مشاهده بیشتر</a>
-              </div>
-            </div>
-            <div class="cart__user-img">
-              <img src="./images/user_img.png" alt="user" />
-            </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -102,5 +221,7 @@
       src="https://kit.fontawesome.com/9e31c82e4e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/jquery-3.6.3.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

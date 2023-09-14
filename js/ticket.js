@@ -6,37 +6,20 @@ const subject = document.querySelector("#subject");
 const message = document.querySelector("#message");
 const uploadedFile = document.querySelector("#uplaodFile");
 
-// ckEditor
 
-// ckEditor
+let errorMessaage = [];
 
-username.addEventListener('change', (e) => {
-  console.log(e)
-})
+
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validate();
-  console.log([validate()]);
+  console.log(errorMessaage)
+  // console.log([validate()]);
 });
 
-const formValues = () => {
-  const usernameValue = username.value;
-  const numberValue = number.value;
-  const emailaddressValue = emailaddress.value;
-  const subjectValue = subject.value;
-  const messageValue = message.value;
-  const uploadedFilevalue = uploadedFile.value;
 
-  return {
-    usernameValue,
-    numberValue,
-    emailaddressValue,
-    subjectValue,
-    messageValue,
-    uploadedFilevalue,
-  };
-};
 
 function validate() {
   const usernameValue = username.value;
@@ -49,9 +32,11 @@ function validate() {
   //first name
   if (usernameValue === "") {
     setErrorMsg(username, "نام خود را وارد کنید");
-  } else if (usernameValue.length < 2) {
+  }
+  else if (usernameValue.length < 2) {
     setErrorMsg(username, "لطفا یک نام معتبر وارد کنید");
-  } else {
+  }
+  else {
     setSuccessMsg(username);
   }
   //last name
@@ -98,19 +83,23 @@ function validate() {
 }
 
 function setErrorMsg(input, errMsg) {
-  console.log([input], [errMsg]);
+
+  console.log(input.name)
+  console.log(errMsg);
+  let inputName = input.name;
+  errorMessaage.push({inputName: errMsg})
   let formControl_label = input.parentElement;
   if (!input.parentElement) return null;
   let formControl = formControl_label.parentElement;
-  console.log([formControl]);
+  console.log(formControl_label)
+  
   formControl.className = "form-control error";
   let small = formControl.querySelector("small");
   small.innerText = errMsg;
 }
 
 function setSuccessMsg(input) {
-  // if (!input || !input.parentElement) return null;
-  // console.log(input.parentElement.parentElement);
+
   let formControl_label = input.parentElement;
   let formControl = formControl_label.parentElement;
   formControl.className = "form-control success";
@@ -130,7 +119,6 @@ function successMsgAlert(usernameVal) {
 }
 
 function sendData(usernameVal, sRate, count) {
-  console.log({ usernameVal, sRate, count });
   if (sRate === count) {
     Swal.fire(
       "Welcome! " + usernameVal,
