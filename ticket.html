@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/root_theme.css" />
+    <link rel="stylesheet" href="css/ticket.css" />
+
+    <title>ارسال تیکت</title>
+  </head>
+  <body>
+    <section class="ticket">
+      <div class="ticket__container">
+        <div class="ticket__header">
+          <h3>ارسال تیکت پشتیبانی</h3>
+        </div>
+        <div class="ticket__body">
+          <form id="ticket__form" class="ticket__form">
+            <!--  -->
+            <p class="ticket__body-title">اطلاعات تیکت</p>
+            <div class="ticket__information">
+              <div>
+                <label id="">
+                  <span>نام</span>
+                  <input id="username" name="" type="text" placeholder="نام" />
+                </label>
+                <small id="small"></small>
+              </div>
+
+              <div>
+                <label id="">
+                  <span>شماره موبایل</span>
+                  <input
+                    id="number"
+                    name=""
+                    type="text"
+                    placeholder="شماره موبایل"
+                  />
+                </label>
+                <small id="small"></small>
+              </div>
+
+              <div>
+                <label id="">
+                  <span>آدرس ایمیل</span>
+                  <input
+                    id="email"
+                    name=""
+                    type="email"
+                    placeholder="آدرس ایمیل"
+                  />
+                </label>
+                <small id="small"></small>
+              </div>
+            </div>
+            <!--  -->
+            <p class="ticket__body-title">پیام</p>
+            <div class="ticket__msg ticket__information">
+              <div style="display: flex; flex-direction: column">
+                <label id="subject-label" class="subject-label" id="">
+                  <span>موضوع</span>
+                  <input id="subject" name="" type="text" placeholder="موضوع" />
+                </label>
+                <small id="small"></small>
+              </div>
+
+              <div>
+                <label id="message">
+                  <span>پیام</span>
+                  <div class="ticket__msg-message">
+                    <textarea class="ticket__msg-editor" id="editor"></textarea>
+
+                    <div class="ticket__msg-footer">
+                      <p>words: <span id="word-count">0</span></p>
+                      <p>line: <span id="line">0</span></p>
+                      <p id="saved">ذخیره شد</p>
+                      <p></p>
+                    </div>
+                  </div>
+                </label>
+                <small id="small"></small>
+              </div>
+            </div>
+            <!--  -->
+            <p class="ticket__body-title">ضمیمه ها</p>
+            <div class="uploadfile__container">
+              <label for="uplaodFile" class="drop-container" id="dropcontainer">
+                <span class="drop-title">فایل رو بکشید و رها کنید</span>
+                یا
+                <input
+                  type="file"
+                  id="uplaodFile"
+                  multiple="multiple"
+                  accept="image/*"
+                />
+              </label>
+              <p class="allowed-suffixes">
+                پسوند های مجاز: .jpg, .gif, .jpeg, .png (Max file size: 200MB)
+              </p>
+            </div>
+            <div class="ticket__buttons">
+              <button type="submit" class="send">ارسال</button>
+              <button type="submit" class="cancel-sending">لغو</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------ -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/[version.number]/[distribution]/ckeditor.js"></script> -->
+    <script>
+      ClassicEditor.create(document.querySelector("#editor"), {
+        language: "fa",
+
+        toolbar: [
+          // "fontColor",
+          "heading",
+          "bulletedList",
+          "numberedList",
+          // "fontFamily",
+          // "fontSize",
+          "undo",
+          "redo",
+        ],
+      })
+        .then((editor) => {})
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+    <script src="js/ticket.js"></script>
+  </body>
+</html>
